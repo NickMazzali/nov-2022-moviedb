@@ -8,8 +8,8 @@ let cors = require(`cors`)
 // ! connecting to the database (DB)
 const mongoose = require("mongoose");
 
-mongoose.set(`strictQuery`, true)
-mongoose.connect("mongodb://127.0.0.1:27017/moviedb");
+mongoose.set(`strictQuery`, false);
+mongoose.connect(process.env.DATABASEURL);
 let db = mongoose.connection;
 
 require("dotenv").config()
